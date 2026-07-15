@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oficina Virtual - Autorizaciones Médicas</title>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- App Wrapper -->
+  <div id="app-root" class="app-layout hidden">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon">
+          <i data-lucide="shield-check"></i>
+        </div>
+        <div class="brand-text">
+          <h2>Oficina Virtual</h2>
+          <span>Autorizaciones PAC</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu" id="sidebar-menu">
+        <!-- Rendered dynamically based on role -->
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-badge" id="user-badge-btn">
+          <div class="user-avatar" id="nav-user-avatar">M</div>
+          <div class="user-info">
+            <span class="user-name" id="nav-user-name">Médico</span>
+            <span class="user-role" id="nav-user-role">Médico</span>
+          </div>
+        </div>
+        <button id="logout-btn" class="btn-logout" title="Cerrar sesión">
+          <i data-lucide="log-out"></i>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Container -->
+    <div class="main-container">
+      <!-- Navbar -->
+      <header class="navbar">
+        <div class="navbar-left">
+          <button id="toggle-sidebar" class="btn-icon">
+            <i data-lucide="menu"></i>
+          </button>
+          <h1 id="page-title" class="page-title">Cargando...</h1>
+        </div>
+        
+        <div class="navbar-right">
+          <!-- Notification Bell -->
+          <div class="notification-wrapper">
+            <button id="notif-btn" class="btn-icon relative">
+              <i data-lucide="bell"></i>
+              <span id="notif-count" class="badge-count hidden">0</span>
+            </button>
+            <div id="notif-dropdown" class="dropdown-content hidden">
+              <div class="dropdown-header">
+                <h3>Notificaciones</h3>
+                <button id="mark-all-read" class="btn-text">Marcar leídas</button>
+              </div>
+              <div class="dropdown-list" id="notif-list">
+                <div class="dropdown-empty">No hay nuevas notificaciones</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="btn-icon" title="Cambiar tema">
+            <i data-lucide="moon" id="theme-icon"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- View Wrapper -->
+      <main class="content-wrapper" id="app-content">
+        <!-- Views rendered here -->
+      </main>
+    </div>
+  </div>
+
+  <!-- Auth Layout Wrapper -->
+  <div id="auth-root" class="auth-layout">
+    <div class="auth-card-wrapper">
+      <main class="auth-content" id="auth-content">
+        <!-- Auth views (login / forgot password) rendered here -->
+      </main>
+    </div>
+  </div>
+
+  <!-- Global Alert/Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Global Modal Container -->
+  <div id="global-modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content-wrapper">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3 id="modal-title">Título del Modal</h3>
+          <button id="modal-close" class="btn-icon"><i data-lucide="x"></i></button>
+        </div>
+        <div class="modal-body" id="modal-body">
+          <!-- Dynamically loaded modal content -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/views/login.js"></script>
+  <script src="js/views/forgotPassword.js"></script>
+  <script src="js/views/dashboard.js"></script>
+  <script src="js/views/requests.js"></script>
+  <script src="js/views/requestCreate.js"></script>
+  <script src="js/views/requestDetail.js"></script>
+  <script src="js/views/users.js"></script>
+  <script src="js/views/profile.js"></script>
+  <script src="js/views/audit.js"></script>
+  <script src="js/router.js"></script>
+</body>
+</html>
