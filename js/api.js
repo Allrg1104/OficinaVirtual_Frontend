@@ -1,6 +1,6 @@
 // OFICINA VIRTUAL - SECURE API CLIENT (VANILLA JS)
 
-const API_BASE_URL = 'http://localhost:4000/api';
+const API_BASE_URL = (window.APP_CONFIG && window.APP_CONFIG.API_BASE_URL) || 'http://localhost:4000/api';
 
 let isRefreshing = false;
 let refreshSubscribers = [];

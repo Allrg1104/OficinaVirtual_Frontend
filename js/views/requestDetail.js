@@ -73,7 +73,8 @@ const RequestDetailView = {
       // Render attachments list
       const attachmentsHtml = req.attachments.length > 0
         ? req.attachments.map(att => {
-            const downloadUrl = `http://localhost:4000/api/requests/${req._id}/attachments/${att._id}?token=${store.state.accessToken}`;
+            const _apiBase = (window.APP_CONFIG && window.APP_CONFIG.API_BASE_URL) || 'http://localhost:4000/api';
+            const downloadUrl = `${_apiBase}/requests/${req._id}/attachments/${att._id}?token=${store.state.accessToken}`;
             return `
               <div class="file-preview-item" style="margin-bottom: 8px;">
                 <div class="file-info">

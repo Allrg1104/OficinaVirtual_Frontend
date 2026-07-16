@@ -1,0 +1,13 @@
+{
+  "name": "oficina-virtual-frontend",
+  "version": "1.0.0",
+  "description": "Oficina Virtual - Sistema de Autorizaciones PAC (Frontend prototipo)",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve . -l 3000",
+    "start": "npx serve . -l 3000"
+  },
+  "keywords": ["healthcare", "autorizaciones", "pac", "vanilla-js"],
+  "author": "",
+  "license": "ISC"
+}
